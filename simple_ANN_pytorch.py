@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""
-part2.py
 
-UNSW COMP9444 Neural Networks and Deep Learning
-
-ONLY COMPLETE METHODS AND CLASSES MARKED "TODO".
-
-DO NOT MODIFY IMPORTS. DO NOT ADD EXTRA FUNCTIONS.
-DO NOT MODIFY EXISTING FUNCTION SIGNATURES.
-DO NOT IMPORT ADDITIONAL LIBRARIES.
-DOING SO MAY CAUSE YOUR CODE TO FAIL AUTOMATED TESTING.
-"""
 import numpy as np
 import pickle as pkl
 import matplotlib.pyplot as plt
