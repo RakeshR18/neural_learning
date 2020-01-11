@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
 """
-part3.py
+Data source: Kuzushiji-KMNIST
 
-UNSW COMP9444 Neural Networks and Deep Learning
-
-ONLY COMPLETE METHODS AND CLASSES MARKED "TODO".
-
-DO NOT MODIFY IMPORTS. DO NOT ADD EXTRA FUNCTIONS.
-DO NOT MODIFY EXISTING FUNCTION SIGNATURES.
-DO NOT IMPORT ADDITIONAL LIBRARIES.
-DOING SO MAY CAUSE YOUR CODE TO FAIL AUTOMATED TESTING.
 """
 import torch
 from torchvision import datasets, transforms 
@@ -21,7 +13,7 @@ import numpy as np
 
 class Linear(nn.Module):
     """
-    DO NOT MODIFY
+    
     Linear (10) -> ReLU -> LogSoftmax
     """
 
@@ -40,7 +32,7 @@ class Linear(nn.Module):
 
 class FeedForward(nn.Module):
     """
-    TODO: Implement the following network structure
+    
     Linear (256) -> ReLU -> Linear(64) -> ReLU -> Linear(10) -> ReLU-> LogSoftmax
     """
     def __init__(self):
@@ -61,15 +53,10 @@ class FeedForward(nn.Module):
     
 class CNN(nn.Module):
     """
-    TODO: Implement CNN Network structure
-
     conv1 (channels = 10, kernel size= 5, stride = 1) -> Relu -> max pool (kernel size = 2x2) ->
     conv2 (channels = 50, kernel size= 5, stride = 1) -> Relu -> max pool (kernel size = 2x2) ->
     Linear (256) -> Relu -> Linear (10) -> LogSoftmax
 
-
-    Hint: You will need to reshape outputs from the last conv layer prior to feeding them into
-    the linear layers.
     """
     
     def __init__(self):
@@ -100,7 +87,7 @@ class NNModel:
     def __init__(self, network, learning_rate):
         """
         Load Data, initialize a given network structure and set learning rate
-        DO NOT MODIFY
+       
         """
 
         # Define a transform to normalize the data
@@ -118,11 +105,9 @@ class NNModel:
         self.model = network
 
         """
-        TODO: Set appropriate loss function such that learning is equivalent to minimizing the
+        Set appropriate loss function such that learning is equivalent to minimizing the
         cross entropy loss. Note that we are outputting log-softmax values from our networks,
         not raw softmax values, so just using torch.nn.CrossEntropyLoss is incorrect.
-        
-        Hint: All networks output log-softmax values (i.e. log probabilities or.. likelihoods.). 
         """
         
         self.lossfn = nn.NLLLoss()
@@ -133,10 +118,7 @@ class NNModel:
 
     def view_batch(self):
         """
-        TODO: Display first batch of images from trainloader in 8x8 grid
-
-        Do not make calls to plt.imshow() here
-
+        
         Return:
            1) A float32 numpy array (of dim [28*8, 28*8]), containing a tiling of the batch images,
            place the first 8 images on the first row, the second 8 on the second row, and so on
@@ -157,7 +139,7 @@ class NNModel:
     def train_step(self):
         """
         Used for submission tests and may be usefull for debugging
-        DO NOT MODIFY
+     
         """
         self.model.train()
         for images, labels in self.trainloader:
